@@ -1,0 +1,16 @@
+- id: '1599947868982'
+  alias: Leselicht schalten
+  description: ''
+  trigger:
+  - device_id: ee0a99d0965245dd8a828acb8fa0d5c8
+    discovery_id: 0xd0cf5efffe080d75 action_toggle
+    domain: mqtt
+    platform: device
+    subtype: toggle
+    type: action
+  condition: []
+  action:
+  - device_id: c85892fe859c47dd8ae547667a9590f5
+    domain: light
+    entity_id: light.0xccccccfffed058f3_light
+    type: toggle
