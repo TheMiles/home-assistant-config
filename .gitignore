@@ -1,0 +1,17 @@
+# An * ensures that everything will be ignored.
+*
+
+# Whitelist yaml, doc and gitignore
+!*.yaml
+!*.md
+!.gitignore
+
+# Ignore folders.
+.storage
+.cloud
+.google.token
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
