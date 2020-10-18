@@ -2,3 +2,7 @@
 hello_world:
   module: hello
   class: HelloWorld
+
+light_ramp:
+  module: light_ramp
+  class: LightRamp
