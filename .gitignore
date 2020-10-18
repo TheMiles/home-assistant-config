@@ -8,8 +8,10 @@
 
 # Whitelisting AppDaemon
 !*.dash
+!*.py
 !appdaemon/
 !appdaemon/dashboards/
+!appdaemon/apps/
 
 # Ignore folders.
 .storage
