@@ -5,6 +5,10 @@
 This will be my Home Assistant configuration.
 It is at a rather early stage, let's see where this will head to
 
+## AppDaemon
+
+Well and then there is [AppDaemon](https://appdaemon.readthedocs.io/en/latest/)...
+
 
 ## Used devices
 

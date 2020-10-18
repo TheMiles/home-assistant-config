@@ -6,6 +6,14 @@
 !*.md
 !.gitignore
 
+# Whitelisting AppDaemon
+!*.py
+!*.html
+!*.css
+!*.js
+!appdaemon/
+
+
 # Ignore folders.
 .storage
 .cloud
