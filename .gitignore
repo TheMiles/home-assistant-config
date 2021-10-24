@@ -13,6 +13,9 @@
 !appdaemon/dashboards/
 !appdaemon/apps/
 
+# Whitelisting esphome
+!esphome/
+
 # Ignore folders.
 .storage
 .cloud
