@@ -2,5 +2,23 @@ substitutions:
   device_name: esp-bob
   device_platform: ESP8266
   device_board: esp01_1m
+  location: Livingroom
 
 <<: !include includes/common.yaml
+
+<<: !include includes/i2c.yaml
+
+sensor:
+  - platform: bme680
+    temperature:
+      name: "${location} Temperature"
+      oversampling: 16x
+    pressure:
+      name: "${location} Pressure"
+    humidity:
+      name: "${location} Humidity"
+    gas_resistance:
+      name: "${location} Gas Resistance"
+    update_interval: 60s
+    address: 0x77
+    i2c_id: esp8266_01s

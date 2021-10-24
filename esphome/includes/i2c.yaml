@@ -1,0 +1,6 @@
+
+i2c:
+  sda: 0
+  scl: 2
+  scan: true
+  id: esp8266_01s
