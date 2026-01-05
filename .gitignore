@@ -1,0 +1,20 @@
+.storage/
+.cloud/
+.vscode/
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+googleassistant_serviceaccount.json
+includes/googleassistant_serviceaccount.json.backup
+includes/googleassistant_serviceaccount.json
+.google.token
+.spotify-token-cache
+.sonoff.json
+home-assistant_v2.db*
+*.log
+*.log.*
+*.lock
+.HA_VERSION
+
+# Ignore Python cache files 
+__pycache__/
