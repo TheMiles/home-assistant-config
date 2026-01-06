@@ -1,0 +1,33 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+influxdb:
+  ssl: false
+  host: carla.local
+  port: 8086
+  api_version: 2
+  token: !secret influxdb_token
+  organization: !secret influxdb_organization
+  bucket: !secret influxdb_bucket
+  include:
+    domains:
+      - sensor
+    entities:
+      # Haus-Sensoren
+      # Shelly Keller
+      - sensor.shellyht_18bc33_temperature
+      - sensor.shellyht_18bc33_humidity
+      - sensor.shellyht_18bc33_battery
+      # Auto-Sensoren
+      - sensor.cooper_se_kilometerstand
+      - sensor.cooper_se_ladestatus
+      - sensor.cooper_se_verbleibende_batterie_in_prozent
+      - sensor.cooper_se_verbleibende_reichweite_insgesamt

@@ -1,0 +1,32 @@
+homeassistant:
+  enabled: true
+advanced:
+  network_key: '!secret zigbee_network_key'
+  pan_id: '!secret zigbee_pan_id'
+  ext_pan_id: '!secret zigbee_ext_pan_id'
+mqtt:
+  server: mqtt://core-mosquitto:1883
+  user: '!secret mqtt_username'
+  password: '!secret mqtt_password'
+serial:
+  port: /dev/ttyUSB0
+frontend:
+  enabled: true
+  port: 8099
+device_options: {}
+devices:
+  '0x000b57fffe1000ce':
+    friendly_name: '0x000b57fffe1000ce'
+  '0xd0cf5efffe080d75':
+    friendly_name: TF R Wohnzimmer 1
+  '0x50325ffffefe920b':
+    friendly_name: '0x50325ffffefe920b'
+  '0xd0cf5efffe15f9d1':
+    friendly_name: '0xd0cf5efffe15f9d1'
+  '0x2c1165fffe820907':
+    friendly_name: '0x2c1165fffe820907'
+  '0x0c4314fffe877a2a':
+    friendly_name: '0x0c4314fffe877a2a'
+  '0xb4e3f9fffeb3600b':
+    friendly_name: '0xb4e3f9fffeb3600b'
+version: 4

@@ -1,0 +1,30 @@
+remotecyclescenes:
+  sequence:
+  - variables:
+      scenes:
+      - scene.salon_hell
+      - scene.salon_hell_warm
+      - scene.salon_cozy
+      - scene.salon_cozy_lesen_2
+      count: '{{ scenes | length }}'
+      raw_idx: '{{ states(''input_number.saloncurrentscene'') | int(0) }}'
+      idx: '{{ ((raw_idx % count) + count) % count }}'
+  - condition: template
+    value_template: '{{ count > 0 }}'
+  - action: scene.turn_on
+    target:
+      entity_id: '{{ scenes[idx] }}'
+    data:
+      transition: 1
+  - if:
+    - condition: template
+      value_template: '{{ raw_idx != idx }}'
+    then:
+    - target:
+        entity_id: input_number.saloncurrentscene
+      data:
+        value: '{{ idx }}'
+      action: input_number.set_value
+  alias: RemoteCycleScenes
+  description: Cycle Through scenes in Salon
+  mode: queued

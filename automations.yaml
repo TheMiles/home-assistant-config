@@ -1,0 +1,78 @@
+- id: '1766853306559'
+  alias: Licht Salon
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1524_e1810.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_device: !secret tradfri_controller_device_salon
+      helper_last_controller_event: input_text.automationsalonremote1
+      action_button_center_short:
+      - action: light.toggle
+        metadata: {}
+        target:
+          area_id: wohnzimmer
+        data: {}
+      action_button_up_short:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          area_id: wohnzimmer
+        data:
+          brightness_step_pct: 10
+          transition: 1
+      action_button_down_short:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          area_id: wohnzimmer
+        data:
+          brightness_step_pct: -10
+          transition: 1
+      action_button_down_long:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          area_id: wohnzimmer
+        data:
+          brightness_step_pct: -10
+          transition: 1
+      action_button_up_long:
+      - action: light.turn_on
+        metadata: {}
+        target:
+          area_id: wohnzimmer
+        data:
+          brightness_step_pct: 10
+          transition: 1
+      button_left_long_loop: false
+      button_up_long_loop: false
+      button_down_long_loop: false
+      button_down_long_max_loop_repeats: 19
+      button_up_long_max_loop_repeats: 19
+      action_button_right_short:
+      - action: input_number.increment
+        metadata: {}
+        target:
+          entity_id: input_number.saloncurrentscene
+        data: {}
+      action_button_left_short:
+      - action: input_number.decrement
+        metadata: {}
+        target:
+          entity_id: input_number.saloncurrentscene
+        data: {}
+      action_button_right_double: []
+      action_button_left_double: []
+- id: '1766931700469'
+  alias: Trigger CycleSceneSalon
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_number.saloncurrentscene
+  conditions: []
+  actions:
+  - action: script.remotecyclescenes
+    data: {}
+  mode: single
