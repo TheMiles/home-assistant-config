@@ -1,6 +1,7 @@
 .storage/
 .cloud/
 .vscode/
+blueprints/
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
@@ -15,6 +16,9 @@ home-assistant_v2.db*
 *.log.*
 *.lock
 .HA_VERSION
+*.db
+*backup*
+state.json
 
-# Ignore Python cache files 
+# Ignore Python cache files
 __pycache__/
