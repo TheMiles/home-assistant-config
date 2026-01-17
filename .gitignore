@@ -20,5 +20,9 @@ home-assistant_v2.db*
 *backup*
 state.json
 
+# remove zigbee2mqtt configs as no proper separation of secrets is possible
+zigbee2mqtt/*
+
+
 # Ignore Python cache files
 __pycache__/
